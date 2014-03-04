@@ -1,0 +1,122 @@
+package fi.left2die.gameobject.enemies;
+
+import org.newdawn.slick.Color;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.geom.Circle;
+import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Vector2f;
+
+import fi.left2die.gameobject.Entity;
+import fi.left2die.gameobject.GameWorld;
+import fi.left2die.gameobject.Projectile;
+import fi.left2die.gameobject.enviroment.Map;
+import fi.left2die.io.Resources;
+
+public class BasicZombie extends Enemy{
+
+	private Image sprite;
+	
+	private Color healthColor;
+	
+	private float targetAngle;
+	
+	private Vector2f target;
+	
+	public BasicZombie(String id, Entity parent, Vector2f position, float damage, final Vector2f target) {
+		super( "BasicZombie",parent, damage);
+		
+		this.armor = 1;
+		this.target = target;
+		this.sprite = Resources.getImage("zombie");
+		this.scale = 0.2f;
+		this.position = position;
+		this.layer = 5;
+		this.scoresFromKilling = 15;
+		this.maxHealt = 100;
+		this.expirenceFromKill = 3;
+		this.currentHealt = this.maxHealt;	
+		this.maxSpeed = 0.05f;
+		this.velocity = new Vector2f((float)maxSpeed,(float)maxSpeed);
+		this.healthColor = new Color( 255-(255*maxHealt/100), 255*maxHealt/100, 1 );
+		
+		this.sprite.setCenterOfRotation( sprite.getWidth()/2 * scale, 
+										 sprite.getHeight()/2 * scale);
+		
+		this.shape = new Circle( this.sprite.getCenterOfRotationX() * scale,
+								 this.sprite.getCenterOfRotationY() * scale, 
+								 this.sprite.getWidth()/4 * scale );
+		
+	}
+
+
+	
+	@Override
+	public void onHit() {
+		healthColor.r = 1-currentHealt/100;
+		healthColor.g = currentHealt/100;
+		healthColor.b = 0;		
+	}	
+
+
+	@Override
+	public void render(GameContainer cont, Graphics g) {
+		sprite.draw(position.x, position.y, scale );		
+		g.setColor(healthColor);
+		g.fillRect(position.x, position.y, sprite.getWidth()*scale*currentHealt/100, 5);
+	}
+
+	@Override
+	public void update(GameContainer cont, int delta) {
+		
+		velocity.x = (float)maxSpeed;
+		velocity.y = (float)maxSpeed;		
+		
+		targetAngle = (float)Math.toDegrees(Math.atan2(target.y-position.y,target.x-position.x));		
+		
+		velocity.setTheta(targetAngle);
+		
+		if(!touchesPlayer){
+			//position.x += velocity.x * delta;
+			//position.y += velocity.y * delta;
+			
+			tryToMove(delta);
+			
+			shape.setLocation(position.x + sprite.getCenterOfRotationX()/2, 
+							  position.y + sprite.getCenterOfRotationY()/2);
+		}
+		
+		sprite.setRotation(targetAngle-180);
+	}
+	
+
+	
+	private void tryToMove(int delta){
+		
+		float newX = position.x + velocity.x*delta;
+		float newY = position.y + velocity.y*delta;
+		
+		//get monsters new locationtile and check if it's blocked
+		if (GameWorld.map.blocked((newX+shape.getWidth()/2)/Map.TILESIZE,(newY+shape.getHeight()/2)/Map.TILESIZE)) {
+			if (GameWorld.map.blocked((newX+shape.getWidth()/2)/Map.TILESIZE, (position.y+shape.getHeight()/2)/Map.TILESIZE)) {
+				if (GameWorld.map.blocked((position.x+shape.getWidth()/2)/Map.TILESIZE, (newY+shape.getHeight()/2)/Map.TILESIZE)) {
+					//cannot move that way
+					velocity = new Vector2f(0,0);
+				} else {//move y coordinates only
+					position.y = newY;
+					velocity = new Vector2f(0,velocity.y);
+				}
+			} else {//move x coordinates only
+				position.x = newX;
+				velocity = new Vector2f(velocity.x,0);
+			}
+		} else {//yay, success!
+			position.x = newX;
+			position.y = newY;
+		}
+	}
+
+	
+
+}

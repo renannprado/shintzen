@@ -1,5 +1,5 @@
 The Shintzen
-========
+--------------------------------
 
 Shintzen is the game that was developent as a project work in my last student year in
 Vaasa University of Applied Sciences. Game is not finished and it not highly polished version, 
@@ -14,3 +14,4 @@ Game is distributed under the GNU General Public License read more from licence.
 Contact information: 
 Name: Teemu Puukko
 Email: teemuki@gmail.com 
+

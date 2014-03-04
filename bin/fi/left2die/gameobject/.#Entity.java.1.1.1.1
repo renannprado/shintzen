@@ -1,0 +1,96 @@
+package fi.left2die.gameobject;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.newdawn.slick.geom.Shape;
+
+import fi.left2die.library.UniqueID;
+
+/**
+ * 
+ * @author TeeMuki
+ *
+ */
+public class Entity implements Comparable<Object> {
+
+	/**
+	 * Variables has public modifier for performance reasons
+	 */	
+	private String id;
+	public Entity parent;//Objects parent
+	public Shape shape;//Boundaries of object	
+	public float rotation = 0;//Angle of rotation on degrees
+	public float rotationSpeed = 0;//Rotation speed 
+	public float scale = 1;//Sprite size multiplier
+	public boolean isInUse = false;//Tells if entity is on use in the game
+	
+	public int layer;//Top layer 0 and as number grows we are going lower layers 
+	
+	private ArrayList<Entity>childrens = new ArrayList<Entity>();
+	
+	public Entity()
+	{	
+		this.id = "entity" + UniqueID.get();
+	}
+	
+	public Entity(String id, Entity parent, Shape shape,
+				  float rotation, float scale ) {
+	
+		this();
+		this.parent = parent;
+		this.shape = shape;
+		this.rotation = rotation;
+		this.scale = scale;
+	}
+
+	public Entity(String id) {
+		this.id = id + UniqueID.get();
+	}
+	
+	public boolean intersects( Entity entity ) {
+		return this.shape.intersects(entity.shape);
+	}
+	
+	public void clearChildrens() {
+		childrens.clear();
+	}
+	
+	public void addChildren( Entity entity ) {
+		childrens.add(entity);
+	}
+	
+	public void removeChildren( String entityID ) {
+		
+		Entity entityToRemove = null;
+		
+		for( Entity e : childrens ) {
+			if( e.id.equals(entityID) )
+				entityToRemove = e;
+		}
+		
+		if( entityToRemove != null )
+			childrens.remove(entityToRemove);
+	}	
+	
+	public String getId() {
+		return id;
+	}
+	
+	public List<Entity> getChildrens() {
+		return childrens;
+	}
+
+	@Override
+	public int compareTo(Object entity) {
+		
+		
+		if(((Entity)entity).layer == this.layer )
+			return 0;
+		else if(((Entity)entity).layer > this.layer )
+			return 1;
+		else
+			return -1;
+	}
+	
+	
+}

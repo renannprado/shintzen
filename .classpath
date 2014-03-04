@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/hiero.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/ibxm.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/jinput.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/jnlp.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/lwjgl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/natives-win32"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/natives-linux.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/natives-mac.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/natives-win32.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/packulike.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/pedigree.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/scalar.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/slick.jar" sourcepath="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/slick-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/slick-examples.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/slick-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/slick-util.jar"/>
+	<classpathentry kind="lib" path="D:/Teemu/Ohjelmointi/Java/lib/slick/lib/tinylinepp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

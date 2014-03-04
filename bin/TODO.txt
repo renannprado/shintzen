@@ -1,0 +1,61 @@
+===================================================================================================
+PROTOTYPE 3 - OMINAISUUDET - JULKAISU XX.X.XXXX
+===================================================================================================
+
+-Zombien varjot
+
+
+===================================================================================================
+PROTOTYPE 2 - OMINAISUUDET - JULKAISU 10.2.2010
+===================================================================================================
+
+Kartat 
+Alkuun joku demokartta jolla vois testailla ja ens viikolla lisää.
+
+Roolipelimäisyydet
+Elikkä järjestelmä voisi toimia siten että taposta saa expaa ja expalla ostetaan ominaisuuksia.
+Expatarve voi kasvaa, joko täysin lineaarisesti siirryttäessä leveliltä seuraavalla, tätä voi muokata tarpeen tullen.
+Joka kerta kun pelaaja saa levelin hän voi valita 1-4 vaihtoehdosta haluamansa taidon, jonka ottaa käyttöön. 
+Taidot vaihtelevat hiukan sattumanvaraisesti aina valikossa, mutta niitä voidaan jakaa tasoihin, että parasta ominaisuutta
+ei saa aivan pienimmillä tasoilla.
+
+Taitoja
+-poimi tavara viemällä hiiri tavaran päälle hetkeksi
+-laaser tähtäin
+-polttava katse, vie hiiri örmyn päälle ja aiheuta palovammoja
+-humala ehfekti :)
+-muutama hetki kuolemattomuutta
+-muutama hetki näkymättömyyttä, eli örmyt menettävät targetin?
+-tupla expa
+-tupla pisteet
+
+Pelaajan informaatio ikkuna jossa näkyisi pelaajan pisteet, healtti, ammusten määrät.
+
+- Dynääminen muistinvaraus on raskasta :<
+Ammukset täytyisi luoda muistiin pelin käynnistyessä, eikä niitä ampuessa. Yksi ratkaisu olisi luoda lista johon tallennetaan
+ammuksia pelin käynnistyessä ~1000 kappaletta. Ammuksella olisi lippumuuttuja, joka kertoisi onko ammus käytössä vai ei. 
+Aina kun ammus poistuisi kentältä ammus palaisi ainoastaan lippumuuttuja ilmoittaisi että ammus on taas käytettävissä.
+
+
+Savetus ja tallennus?
+
+Statistiikkaa: Monta tappoa sekunnissa, kuinka pitkään ollaan selviydytty, ammusten osuma prosentit jne.
+
+Tappokompoäänet: momomomonsteri tappo :]
+
+Healtpack (Toteutettu) 
+Aikalaskuri jonka tehtävä on mitata kuinka kauan pelaaja/pelaajat ovat selvinneet kentällä. (Toteutettu )
+Peliohjaimen konffiqurointi työkalu ( Totetutettu )
+
+===================================================================================================
+BUG HUNTTER KILL LIST AND OHTER STUPID FEATURES
+===================================================================================================
+
+-Peli aika kello alkaa tikittää ennen kuin astutaan peliin
+
+===================================================================================================
+PROTOTYPE 1 - OMINAISUUDET
+===================================================================================================
+Prototyyppi 1 julkaistaan 26.1.2010
+
+Pelaajan kontrollointi peliohjaimella ( Toteutettu, mutta kovakoodattu :( )

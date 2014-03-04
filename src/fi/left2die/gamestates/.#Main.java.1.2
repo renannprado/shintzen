@@ -1,0 +1,108 @@
+package fi.left2die.gamestates;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.InvalidPropertiesFormatException;
+
+import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.util.Log;
+import org.newdawn.slick.util.LogSystem;
+
+import fi.left2die.io.Confiqurations;
+
+public class Main extends StateBasedGame {
+	
+	public static long counter = 0;
+	
+	public final static int LOADING_STATE = 0;
+	public final static int MAINMENU_STATE = 1;
+    public final static int PLAYING_STATE = 2;
+    public final static int HIGHSCORE_STATE = 3;
+    public final static int ABOUT_STATE = 4;
+    public final static int OPTION_STATE = 5;
+	
+	public Main(String title) throws SlickException {
+		super(title);
+				
+		this.addState(new LoadingState(LOADING_STATE));
+		//highscorestate is required in playingstate constructor		
+		HighscoreState highscoreState = new HighscoreState(HIGHSCORE_STATE);
+		PlayingState playingState = new PlayingState(PLAYING_STATE, highscoreState );
+		//adds different states together
+		this.addState(playingState);
+		this.addState(highscoreState);
+		this.addState(new MainMenuState(MAINMENU_STATE));
+		this.addState(new OptionState(OPTION_STATE) );
+		this.addState(new AboutState(ABOUT_STATE));
+        this.enterState( LOADING_STATE );
+	}
+	
+	@Override
+	public void initStatesList(GameContainer gc) throws SlickException {
+		this.getState(LOADING_STATE).init(gc, this);
+		this.getState(MAINMENU_STATE).init(gc, this);
+		this.getState(HIGHSCORE_STATE).init(gc, this);
+		this.getState(OPTION_STATE).init(gc, this);
+		this.getState(PLAYING_STATE).init(gc, this);
+		this.getState(ABOUT_STATE).init(gc, this);	
+	}
+	
+	
+	private static void loadConfigurations( String args[] ) {
+		
+		String configfile = "config.xml";
+		
+		//Look for configuration file from arguments
+		if( args.length > 0 )
+			configfile = args[0];
+				
+		//Load configuration file
+		try {
+			new Confiqurations(configfile);
+		} catch (InvalidPropertiesFormatException e1) {
+			System.out.println("Configuration file is somehow corrupted, using now defaut values.");
+		} catch (FileNotFoundException e1) {
+			System.out.println("Configuration file was not found, using now defaut values.");
+		} catch (IOException e1) {
+			System.out.println("Configuration file was not found or it is unaccesable, using now defaut values.");
+		}
+		
+		//Shut down verbose loggin
+		Log.setVerbose(false);
+	}
+	
+	private static void startGame() throws SlickException {
+				
+		 //Default values are used if there is error in configuration file.
+		 int width = 1024;
+		 int height = 768;
+		 boolean fullscreen = false;
+		 int fps = 100;
+		 
+		 try {
+			 width = new Integer(Confiqurations.getProperty( Confiqurations.SCREEN_WIDTH ));
+			 height = new Integer(Confiqurations.getProperty( Confiqurations.SCREEN_HEIGHT ));		 
+			 fullscreen = Confiqurations.getBoolean( Confiqurations.FULLSCREEN );
+			 fps = new Integer(Confiqurations.getProperty( Confiqurations.FPS));
+		 } catch( NumberFormatException e ) {
+			 e.printStackTrace();
+		 }
+		
+		 AppGameContainer app = new AppGameContainer(new Main("Left2Die"));
+		 app.setDisplayMode( width,  height, fullscreen );
+		 app.setTargetFrameRate(fps);
+		 app.setShowFPS(fullscreen);
+		 app.start();
+	}
+	
+		
+	
+	public static void main(String[] args) throws SlickException
+	{
+		loadConfigurations(args);
+		startGame();	
+	}
+}

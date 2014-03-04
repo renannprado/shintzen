@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="80" height="60" tilewidth="16" tileheight="16">
+ <tileset name="tiles" firstgid="1" tilewidth="16" tileheight="16">
+  <image source="tiles2.PNG"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Layer 0" width="80" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3awQrCMBBF0YhudO1G8f+/0xYRRGxr5k06yXAvBHFh1UOMsfZQSjkyTOM0jXMha9eCnxJ+Wvhp4aeFn1aE3+XHGLUov7X7I4WfVla/mrVBWUey+u0VflqKn3Xee/n14K76fd7WPm7pvvU4EUX5eez/etg7Rnx+PdvjudfeY4bfby0Nt+ZHBr+5Vp+DrWNm8ZvzNvznWC39ItZGjzW55vHZ/L6fu+Y1WOyz+n32a7+0NGrLtP5FhJ8Wflr4aXn7tVqne83Tr/Z8b4Y8/CzzCr9X1rmUZQ56nL+yhp8Wfsw/1j8t7+/fJZOse8A998+jVPOa+f223D+Go/u1ntvZ/z+KXhcy+EUaju73Lsowi19U+Gnhp4WfFn5a+Gnhp4WfFn5aI/q1PjfWy/VXI9bT9WujxPVrceGnhZ8Wflr4ac1+t2ncGabxmMYTCR1V0ABLAAA=
+  </data>
+ </layer>
+</map>

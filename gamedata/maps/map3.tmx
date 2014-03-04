@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="40" height="40" tilewidth="48" tileheight="48">
+ <tileset name="tilet" firstgid="1" tilewidth="48" tileheight="48" spacing="2">
+  <image source="tiles1.PNG" trans="bababa"/>
+ </tileset>
+ <layer name="Layer 0" width="40" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3YQQrAIBAEwfX/n84fUkSW0A0eR+omeGbmLD9by2fls/JZ+ay3vlvvwd99X92v+3y2z2f7fLbPZ/vtvlvls/JZ+ax8Vj4rn5XPymfpP8qN8wB1JQHdABkAAA==
+  </data>
+ </layer>
+ <layer name="Layer 1" width="40" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3YOQ7CMBCF4bkNULOVbAdiJyBWAQ3rmXkpaBCWPMaeTNAUX2dHv8ZKLCUjoodSSzjCTqlDhL4xTAJMhfq2MIQrwwj2gn1r5uw2gn0X5uzebkJ9KVmf9X0zg3mghUBfvi8jv/vpc91TqC/fV4GqQ+2H58fqq0PDoWl9rL4WtBX39WGguE/7+Voff18Hug69Avvu5HcP+K6L3SfF+srVt1Lep31+sfu452Hz08X6ytEX+p7Z/IrtS/19/Pf5SfSdKPxfT2pneAHSaTI4ABkAAA==
+  </data>
+ </layer>
+</map>

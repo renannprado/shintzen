@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="48" tileheight="48">
+ <tileset name="tilet" firstgid="1" tilewidth="48" tileheight="48" spacing="2">
+  <image source="tiles2.PNG"/>
+ </tileset>
+ <layer name="Layer 0" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO2Z3QqCQBCFx6cpzeqiwghv+vP9H6kJFCJw3d1G92ycDw5e7cx+wy4KFiJS/Elyhx5Y0AMLemCR0qPWbB3ZBdRK6XHW7DXPkXQBtVJ7XIxq0WOcqXM/pBVsj6lzH3sHXFh4fM/fcs6+WHg8ZL45+8L3IBb0sKXUVH02EetRPE6alWataSLWI3k0H89Q6GHLe/8HzVHy9rhqbn3uEetRPH6FHlhYeLhqLDUnevjVoIfdHixq5OiR8v8KPTDqL9WHHlh96IHVhx5YfeiB2Wdu6IEFPbDw+ebOJS9fLedsECcAAA==
+  </data>
+ </layer>
+ <layer name="Layer 1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3Zuw6CQBCF4a2VmtCqlF4bY9REC2/v/0TOtCNeNqy7Z8jZ5G8gLHwJgSysQghX071jW0x9j7c9vuxfS3tp67wdHVDRgRUdWJV0zKWFyQ4Pjl+GJ4f3+wrdETvoSOv45/XR4TM6sEJx2EEHHXTQgeroGx1YpXDoOntpto2k6s0+VEfXHLXUSCfpTEdxx1RqE81f0qFtHDoO4fWbmnaMmF+fDWNTldFxCWn+E9XSxNRkdKSanw466Bi+Q9+dM1Pr0IF8nqE49B15G4AjV3RgRQdWn9YOntJ1zhODoyH3ECcAAA==
+  </data>
+ </layer>
+</map>
